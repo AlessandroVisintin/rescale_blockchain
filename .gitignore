@@ -1,0 +1,6 @@
+**/node_modules/
+_old/network/*
+_old/assets/accounts/*
+logs/*
+blockchain/configs/genesis.json
+blockchain/nodes/*
