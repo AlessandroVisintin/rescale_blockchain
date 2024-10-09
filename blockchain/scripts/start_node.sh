@@ -5,7 +5,7 @@ set -e
 
 # Check if the required argument (node name) is provided
 if [ "$#" -lt 1 ]; then
-    echo -e "Usage: $0 <node_name> [<bootnode1> <bootnode2> ...]"
+    echo -e "Usage: $0 <node_name> [--bootnodes]"
     exit 1
 fi
 
@@ -13,11 +13,15 @@ fi
 NODE_NAME="$1"
 shift
 
-# The remaining arguments are bootnodes (optional)
-BOOTNODES="$@"
+# Check for the optional --bootnodes flag
 BOOTNODE_LIST=""
-if [ ${#BOOTNODES[@]} -gt 0 ]; then
-    BOOTNODE_LIST=$(IFS=','; echo "${BOOTNODES[*]}")
+if [ "$#" -ge 1 ] && [ "$1" == "--bootnodes" ]; then
+    BOOTNODES_FILE="$ROOTPATH/$BLOCKCHAIN_CONFIGS/bootnodes.json"
+    if [ ! -f "$BOOTNODES_FILE" ]; then
+        echo -e "$BOOTNODES_FILE not found"
+        exit 1
+    fi
+    BOOTNODE_LIST=$(jq -r 'join(",")' "$BOOTNODES_FILE")
 fi
 
 # Load environment variables from the .env file

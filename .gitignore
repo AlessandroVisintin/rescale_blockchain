@@ -2,5 +2,7 @@
 _old/network/*
 _old/assets/accounts/*
 logs/*
-blockchain/configs/genesis.json
 blockchain/nodes/*
+blockchain/configs/*
+!blockchain/configs/
+!blockchain/configs/qbftConfigFile.json
