@@ -1,0 +1,4 @@
+configs/*
+!configs/config.sh
+
+nodes/*

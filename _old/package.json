@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@ethereumjs/common": "^4.4.0",
-    "ethereumjs-tx": "^2.1.2",
-    "solc": "^0.8.27",
-    "web3": "^4.13.0"
-  }
-}

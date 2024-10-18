@@ -1,8 +1,0 @@
-**/node_modules/
-_old/network/*
-_old/assets/accounts/*
-logs/*
-blockchain/nodes/*
-blockchain/configs/*
-!blockchain/configs/
-!blockchain/configs/qbftConfigFile.json

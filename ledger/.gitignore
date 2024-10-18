@@ -1,0 +1,10 @@
+configs/*
+!configs/qbftConfigFile.json
+
+contracts/*
+!contracts/*.js
+!contracts/*.sol
+
+nodes/*
+
+node_modules/*
